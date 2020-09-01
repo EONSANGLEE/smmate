@@ -1,0 +1,9 @@
+.footer {
+  @apply absolute w-full bg-gray-300 border-t border-gray-400;
+  left: 0;
+  bottom: 0;
+
+  line-height: 40px;
+  text-align: center;
+  font-size: 12px;
+}

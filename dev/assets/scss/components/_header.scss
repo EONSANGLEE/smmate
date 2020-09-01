@@ -1,0 +1,85 @@
+.header {
+  @apply bg-gray-800 fixed left-0 top-0 w-full;
+  height: 40px;
+  z-index: 1000;
+
+  .header__btn {
+    height: 40px;
+
+    &.header__btn--history {
+      background: url('../images/icons/document.png') no-repeat center;
+      background-size: auto 16px;
+    }
+    &.header__btn--message {
+      background: url('../images/icons/message.png') no-repeat center;
+      background-size: auto 16px;
+    }
+    &.header__btn--menu {
+      background: url('../images/icons/hamburger.png') no-repeat center;
+      background-size: auto 20px;
+    }
+  }
+  .wrap {
+    width: 1500px;
+  }
+
+  .header__btn-col {
+    width: 105px;
+    flex: none;
+
+    .col {
+      text-indent: -9999px;
+      overflow: hidden;
+
+      border: none;
+    }
+  }
+  .col {
+    @apply relative border-r border-gray-900;
+
+    &:first-child {
+      @apply border-l border-gray-900;
+    }
+
+    &:hover {
+      .depth,
+      .depth2 {
+        display: block;
+      }
+    }
+  }
+  .link {
+    line-height: 40px;
+    font-weight: 500;
+    @apply block text-center text-white;
+  }
+  .depth,
+  .depth2 {
+    @apply bg-gray-700 py-2 w-full absolute;
+    top: 40px;
+    display: none;
+
+    a {
+      @apply text-white px-4;
+      display: block;
+      line-height: 2.5em;
+      font-size: 12px;
+
+      &:hover {
+        @apply bg-gray-600;
+      }
+    }
+
+    .divide {
+      height: 5px;
+      width: 100%;
+      @apply bg-gray-900;
+    }
+  }
+  .depth2 {
+    left: calc(100% + 1px);
+  }
+  .depth {
+    left: 0;
+  }
+}
