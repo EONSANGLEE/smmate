@@ -1,0 +1,9 @@
+.btnbox {
+  @apply flex items-center justify-center;
+  .submit {
+    @apply text-white bg-indigo-500;
+    padding: 0 20px;
+    line-height: 50px;
+    border-radius: 3px;
+  }
+}

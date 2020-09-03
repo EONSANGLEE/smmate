@@ -10,11 +10,12 @@ body {
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji',
     'Sans-serif';
-  font-weight: 300;
+  font-weight: 400;
   min-width: 1300px;
 }
 .wrap {
-  width: 1300px;
+  width: 100%;
+  max-width: 1300px;
   padding: 0 10px;
   margin: 0 auto;
 }
@@ -29,6 +30,7 @@ table {
   table-layout: fixed;
   width: 100%;
 }
+
 .row {
   @apply flex;
 }

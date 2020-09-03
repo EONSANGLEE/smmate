@@ -1,0 +1,27 @@
+.section {
+  margin-bottom: 0px;
+
+  .section__header {
+    @apply flex items-center mb-2;
+    a {
+      font-weight: 400;
+    }
+
+    .sts {
+      width: 15px;
+      height: 15px;
+      text-indent: -9999px;
+      overflow: hidden;
+      background: url('../images/icons/settings-black.png') no-repeat center;
+      background-size: 100% 100%;
+    }
+  }
+
+  .section__title {
+    font-size: 16px;
+    line-height: 20px;
+    padding-left: 0.75em;
+    @apply border-l border-indigo-500;
+    border-left-width: 2px;
+  }
+}

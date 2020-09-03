@@ -1,7 +1,784 @@
 {% extends "layout/base.njk" %}
 
 {% block content %}
-  <div class="wrap">
-  123
+<div class="wrap">
+  <div class="row">
+    <div class="col mr-4" style="width: 250px;flex: none;">
+      {% include "./layout/quick.njk" %}
+    </div>
+      <div class="col flex-1">
+        <div class="row">
+          <div class="col mr-8" style="width: 800px; flex: none;">
+            <div class="section">
+              <header class="section__header">
+                <h2 class="section__title">신규 고객등록</h2>
+              </header>
+              <div class="section__body">
+                <div class="row">
+                  <div class="col mr-4">
+                    <div class="form">
+                      <div class="form__table">
+                        <table>
+                          <colgroup>
+                            <col width="60">
+                            <col width="90">
+                            <col>
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th class="" colspan="2">구분</th>
+                              <td>
+                                <div class="form__row">
+                                  <div class="select w-150">
+                                    <select title="고객 구분 기능, [설정-고객구분 설정] 에서 설정 가능" >
+                                      <option value=""></option>
+                                      <option value="TM">TM</option>
+                                      <option value="TM완료">TM완료</option>
+                                      <option value="만삭거부">만삭거부</option>
+                                      <option value="신규">신규</option>
+                                      <option value="성장">성장</option>
+                                      <option value="단품">단품</option>
+                                      <option value="돌단품">돌단품</option>
+                                      <option value="백일단품">백일단품</option>
+                                      <option value="가족리마인드">가족리마인드</option>
+                                      <option value="원본구매">원본구매</option>
+                                      <option value="계약후취소">계약후취소</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th class="" colspan="2">고객번호</th>
+                              <td>
+                                <div class="form__row">
+                                  <div class="input required w-100">
+                                    <input type="text" required>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th class="" colspan="2">추천인</th>
+                              <td>
+                                <div class="form__row flex">
+                                  <div class="input required flex-1 mr-2">
+                                    <input type="text" required>
+                                  </div>
+                                  <button class="btn">추천인 검색</button>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th class="" colspan="2">출산예정</th>
+                              <td>
+                                <div class="form__row">
+                                  <div class="input required w-200">
+                                    <input type="text" class="datepicker" required readonly >
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th class="" colspan="2">출산일</th>
+                              <td>
+                                <div class="form__row flex">
+                                  <div class="input required w-200 mr-2">
+                                    <input type="text" class="datepicker" required readonly >
+                                  </div>
+                                  <div class="input required w-150">
+                                    <input type="time" required >
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th class="" colspan="2">방문동기</th>
+                              <td>
+                                <div class="form__row flex">
+                                  <div class="select">
+                                    <select name="" title="[설정 - 방문동기 설정]에서 방문동기명 목록 설정">
+                                      <option value="">----</option>
+                                      <option value="홈피예약문의">홈피예약문의</option>
+                                      <option value="네이버카페">네이버카페</option>
+                                      <option value="로드손님">로드손님</option>
+                                      <option value="소개">소개</option>
+                                      <option value="촬영했던아이 동생">촬영했던아이 동생</option>
+                                      <option value="전화상담">전화상담</option>
+                                      <option value="직원가족or지인">직원가족or지인</option>
+                                      <option value="---------- 산부인과 ----------">---------- 산부인과 ----------</option>
+                                      <option value="봄빛병원">봄빛병원</option>
+                                      <option value="봄빛병원(신생아)">봄빛병원(신생아)</option>
+                                      <option value="---------- 산모교실 ----------">---------- 산모교실 ----------</option>
+                                      <option value="블리스산모교실">블리스산모교실</option>
+                                      <option value="메터니티산모교실">메터니티산모교실</option>
+                                      <option value="베페맘스쿨">베페맘스쿨</option>
+                                      <option value="아이마망산모교실">아이마망산모교실</option>
+                                      <option value="원더맘스산모교실">원더맘스산모교실</option>
+                                      <option value="일등맘태교음악회산모교실">일등맘태교음악회산모교실</option>
+                                      <option value="아이웰산모교실">아이웰산모교실</option>
+                                      <option value="---------- 기타 ----------">---------- 기타 ----------</option>
+                                      <option value="박람회">박람회</option>
+                                      <option value="일등맘이벤트">일등맘이벤트</option>
+                                      <option value="베이비메모리즈">베이비메모리즈</option>
+                                      <option value="베페이벤트">베페이벤트</option>
+                                      <option value="LGU+임직원">LGU+임직원</option>
+                                      <option value="9월 코엑스">9월 코엑스</option>
+                                      <option value="9월 킨텍스코베">9월 킨텍스코베</option>
+                                      <option value="콜라보 만삭">콜라보 만삭</option>
+                                      <option value="콜라보 50일">콜라보 50일</option>
+                                      <option value="모비맘 만삭">모비맘 만삭</option>
+                                      <option value="모비맘 50일">모비맘 50일</option>
+                                      <option value="모비맘 가족">모비맘 가족</option>
+                                      <option value="사임당조리원">사임당조리원</option>
+                                      <option value="디어맘조리원">디어맘조리원</option>
+                                      <option value="베네라조리원">베네라조리원</option>
+                                      <option value="포베이비">포베이비</option>
+                                      <option value="허브패밀리">허브패밀리</option>
+                                      <option value="맘누리">맘누리</option>
+                                      <option value="산사모 카페 제휴">산사모 카페 제휴</option>
+                                      <option value="마이옥션">마이옥션</option>
+                                      <option value="착한엄마">착한엄마</option>
+                                      <option value="맘스다이어리">맘스다이어리</option>
+                                      <option value="베베하우스">베베하우스</option>
+                                      <option value="신규본아트">신규본아트</option>
+                                      <option value="50일(신규-본)">50일(신규-본)</option>
+                                      <option value="central center">central center</option>
+                                      <option value="userdef" style="color: blue;">임의입력</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <th colspan="2">지점</th>
+                              <td>
+                                <div class="form__row flex">
+                                  <div class="select w-150 mr-2 required">
+                                    <select name="" id="">
+                                      <option value="">지점</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th colspan="2">소</th>
+                              <td style="padding: 8px 5px 9px;">
+                                <div class="form__row flex">
+                                  <div class="input w-100 mr-2 required">
+                                    <input type="text" readonly>
+                                  </div>
+                                  <button class="btn">주소 검색</button>
+                                </div>
+                                <div class="form__row flex mt-2">
+                                  <div class="input required">
+                                    <input type="text">
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th rowspan="3">돌잔치</th>
+                              <th colspan="">여부</th>
+                              <td>
+                                <div class="form__row flex">
+                                  <div class="radio-box">
+                                    <label for="do" class="radio">
+                                      <input type="radio" name="dol" id="do" hidden value="m" >
+                                      <span></span>
+                                      <p>O</p>
+                                    </label>
+                                    <label for="dx" class="radio">
+                                      <input type="radio" name="dol" id="dx" hidden value="f">
+                                      <span></span>
+                                      <p>X</p>
+                                    </label>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th colspan="">장소</th>
+                              <td>
+                                <div class="form__row flex">
+                                  <div class="input required ">
+                                    <input type="text" class="" required  >
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th colspan="">날짜 및 시간</th>
+                              <td>
+                                <div class="form__row flex">
+                                  <div class="input required w-200 mr-2">
+                                    <input type="text" class="datepicker" required readonly >
+                                  </div>
+                                  <div class="input required w-150">
+                                    <input type="time" required >
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th colspan="2">조리원앨범</th>
+                              <td>
+                                <div class="form__row flex">
+                                  <div class="input required w-200 mr-2">
+                                    <input type="text" class="datepicker" required readonly >
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form">
+                      <div class="form__table">
+                        <table>
+                          <colgroup>
+                            <col width="60">
+                            <col width="90">
+                            <col>
+                          </colgroup>
+                          <tbody>
+
+                            <tr>
+                              <th rowspan="4" class="text-center">아기</th>
+                              <th>이름</th>
+                              <td>
+                                <div class="form__row">
+                                  <div class="input required w-200">
+                                    <input type="text" required>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>성별</th>
+                              <td>
+                                <div class="form__row">
+                                  <div class="radio-box">
+                                    <label for="gender-m" class="radio">
+                                      <input type="radio" name="gender" id="gender-m" hidden value="m" >
+                                      <span></span>
+                                      <p>아</p>
+                                    </label>
+                                    <label for="gender-f" class="radio">
+                                      <input type="radio" name="gender" id="gender-f" hidden value="f">
+                                      <span></span>
+                                      <p>여아</p>
+                                    </label>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>혈액형</th>
+                              <td>
+                                <div class="form__row">
+                                  <div class="select required">
+                                    <select name="" required>
+                                      <option value="">혈액형을 선택해주세요.
+                                      </option><option value="1">A
+                                      </option><option value="2">B
+                                      </option><option value="3">O
+                                      </option><option value="4">AB
+                                      </option><option value="5">A-
+                                      </option><option value="6">B-
+                                      </option><option value="7">O-
+                                      </option><option value="8">AB-</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>몸무게</th>
+                              <td>
+                                <div class="form__row flex items-center">
+                                  <div class="input required w-100">
+                                    <input type="text" required>
+                                  </div>
+                                  <span class="unit">kg</span>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th rowspan="4" class="text-center">엄마</th>
+                              <th>이름</th>
+                              <td>
+                                <div class="form__row">
+                                  <div class="input required w-200">
+                                    <input type="text" required>
+                                  </div>
+                                  
+                                </div>
+                              </td>
+                            </tr>
+                              <th>연락처</th>
+                              <td>
+                                <div class="form__row">
+                                  <div class="input required">
+                                    <input type="text" required>
+                                  </div>
+                                  <label for="mc" class="checkbox">
+                                    <input type="checkbox" id="mc" name="" hidden >
+                                    <span></span>
+                                    <p>광고수신동의 고객인지 확인必 <a href="#//">[설명]</a></p>
+                                  </label>
+                                </div>
+                              </td>
+                            </tr>
+                            </tr>
+                              <th>이메일</th>
+                              <td>
+                                <div class="form__row">
+                                  <div class="input required">
+                                    <input type="email" required>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>생일</th>
+                              <td>
+                                <div class="form__row flex">
+                                  <div class="select w-100 mr-2 required">
+                                    <select name="" id="">
+                                      <option value="">양력</option>
+                                      <option value="">음력</option>
+                                    </select>
+                                  </div>
+                                  <div class="input required w-200">
+                                    <input type="text" class="datepicker" required readonly >
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th rowspan="4" class="text-center">아빠</th>
+                              <th>이름</th>
+                              <td>
+                                <div class="form__row">
+                                  <div class="input required w-200">
+                                    <input type="text" required>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                              <th>연락처</th>
+                              <td>
+                                <div class="form__row">
+                                  <div class="input required">
+                                    <input type="text" required>
+                                  </div>
+                                  <label for="fc" class="checkbox">
+                                    <input type="checkbox" id="fc" name="" hidden >
+                                    <span></span>
+                                    <p>광고수신동의 고객인지 확인必 <a href="#//">[설명]</a></p>
+                                  </label>
+                                </div>
+                              </td>
+                            </tr>
+                            </tr>
+                              <th>이메일</th>
+                              <td>
+                                <div class="form__row">
+                                  <div class="input required">
+                                    <input type="email" required>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th>생일</th>
+                              <td>
+                                <div class="form__row flex">
+                                  <div class="select w-100 mr-2 required">
+                                    <select name="" id="">
+                                      <option value="">양력</option>
+                                      <option value="">음력</option>
+                                    </select>
+                                  </div>
+                                  <div class="input required w-200">
+                                    <input type="text" class="datepicker" required readonly >
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col ">
+            <div class="section">
+              <header class="section__header">
+                <h2 class="section__title">TM 스케쥴</h2>
+                <!-- Fix: 톱니바퀴로 변경 -->
+                <a href="" class="ml-auto sts">설정</a>
+              </header>
+              <div class="row">
+                <div class="col">
+                  <div class="form">
+                    <div class="form__table">
+                      <table>
+                        <colgroup>
+                          <col>
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <td class="tm-check">
+                              <div class="checkbox-box flex-col">
+                                <label for="all" class="checkbox">
+                                  <input type="checkbox" id="all">
+                                  <span></span>
+                                  <p>전체선택</p>
+                                </label>
+                                <label for="type1" class="checkbox">
+                                  <input type="checkbox" id="type1">
+                                  <span></span>
+                                  <p>-60일</p>
+                                </label>
+                                <label for="type2" class="checkbox">
+                                  <input type="checkbox" id="type2">
+                                  <span></span>
+                                  <p>50일 TM</p>
+                                </label>
+                                <label for="type3" class="checkbox">
+                                  <input type="checkbox" id="type3">
+                                  <span></span>
+                                  <p>제일포토문자</p>
+                                </label>
+                                <label for="type4" class="checkbox">
+                                  <input type="checkbox" id="type4">
+                                  <span></span>
+                                  <p>10일</p>
+                                </label>
+                                <label for="type5" class="checkbox">
+                                  <input type="checkbox" id="type5">
+                                  <span></span>
+                                  <p>30일</p>
+                                </label>
+                                <label for="type6" class="checkbox">
+                                  <input type="checkbox" id="type6">
+                                  <span></span>
+                                  <p>50일</p>
+                                </label>
+                                <label for="type7" class="checkbox">
+                                  <input type="checkbox" id="type7">
+                                  <span></span>
+                                  <p>100일</p>
+                                </label>
+                                <label for="type8" class="checkbox">
+                                  <input type="checkbox" id="type8">
+                                  <span></span>
+                                  <p>120일</p>
+                                </label>
+                                <label for="type9" class="checkbox">
+                                  <input type="checkbox" id="type9">
+                                  <span></span>
+                                  <p>220일</p>
+                                </label>
+                                <label for="type10" class="checkbox">
+                                  <input type="checkbox" id="type10">
+                                  <span></span>
+                                  <p>300일</p>
+                                </label>
+                                <label for="type7" class="checkbox">
+                                  <input type="checkbox" id="type7">
+                                  <span></span>
+                                  <p>100일</p>
+                                </label>
+                                <label for="type8" class="checkbox">
+                                  <input type="checkbox" id="type8">
+                                  <span></span>
+                                  <p>120일</p>
+                                </label>
+                                <label for="type9" class="checkbox">
+                                  <input type="checkbox" id="type9">
+                                  <span></span>
+                                  <p>220일</p>
+                                </label>
+                                <label for="type10" class="checkbox">
+                                  <input type="checkbox" id="type10">
+                                  <span></span>
+                                  <p>300일</p>
+                                </label>
+                                <label for="type7" class="checkbox">
+                                  <input type="checkbox" id="type7">
+                                  <span></span>
+                                  <p>100일</p>
+                                </label>
+                                <label for="type8" class="checkbox">
+                                  <input type="checkbox" id="type8">
+                                  <span></span>
+                                  <p>120일</p>
+                                </label>
+                                <label for="type9" class="checkbox">
+                                  <input type="checkbox" id="type9">
+                                  <span></span>
+                                  <p>220일</p>
+                                </label>
+                                <label for="type10" class="checkbox">
+                                  <input type="checkbox" id="type10">
+                                  <span></span>
+                                  <p>300일</p>
+                                </label>
+                              </div>
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col">
+            <div class="section">
+              <header class="section__header">
+                <h2 class="section__title">계약관리</h2>
+              </header>
+              <div class="section__body">
+                <div class="row">
+                <div class="col">
+                  <div class="form">
+                    <div class="form__table">
+                      <table>
+                        <colgroup>
+                          <col width="150">
+                          <col>
+                          <col width="150">
+                          <col>
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th>상품</th>
+                            <td colspan="3">
+                              <div class="form__row ">
+                                <div class="select">
+                                  <select name="" id="">
+                                    <option value="">상품 선택</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th>옵션상품추가</th>
+                            <td >
+                              <div class="form__row flex">
+                                <div class="select w-200  mr-2">
+                                  <select name="" id="">
+                                    <option value="">옵션상품</option>
+                                  </select>
+                                </div>
+                                <div class="select w-200">
+                                  <select name="" id="">
+                                    <option value="">옵션상품</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </td>
+                            <th>지정촬영자</th>
+                            <td >
+                              <div class="form__row ">
+                                <div class="input w-200">
+                                  <input type="text">
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          
+                          <tr>
+                            <th>계약일</th>
+                            <td>
+                              <div class="form__row ">
+                                <div class="input required w-200">
+                                  <input type="text" class="datepicker" required readonly >
+                                </div>
+                              </div>
+                            </td>
+                            <th>계약담당</th>
+                            <td>
+                              <div class="form__row">
+                                <div class="select w-200">
+                                  <select name="" id="">
+                                    <option value="">계약담당자</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th>총액</th>
+                            <td>
+                              <div class="form__row">
+                                <div class="input required">
+                                  <input type="text" class="" required  >
+                                </div>
+                              </div>
+                            </td>
+                            <th>선금</th>
+                            <td>
+                              <div class="form__row flex">
+                                <div class="input w-100 mr-2">
+                                  <input type="text">
+                                </div>
+                                <div class="select w-100">
+                                  <select name="" id="">
+                                    <option value="">-</option>
+                                    <option value="">카드</option>
+                                    <option value="">현금</option>
+                                  </select>
+                                </div>
+                                <div class="radio-box ml-4">
+                                  <label for="payment-m" class="radio">
+                                    <input type="radio" name="payment" id="payment-m" hidden value="m" >
+                                    <span></span>
+                                    <p>영수</p>
+                                  </label>
+                                  <label for="payment-f" class="radio">
+                                    <input type="radio" name="payment" id="payment-f" hidden value="f">
+                                    <span></span>
+                                    <p>청구</p>
+                                  </label>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="row mt-1">
+                <div class="col">
+                  <div class="form">
+                    <div class="form__table">
+                      <table>
+                        <colgroup>
+                          <col width="60">
+                          <col width="90">
+                          <col>
+                          <col width="150">
+                          <col>
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th rowspan="2" class="text-center">촬영<br/>추가</th>
+                            <th>목록</th>
+                            <td>
+                              <div class="form__row">
+                                <div class="select">
+                                  <select name="" id="">
+                                    <option value="">촬영 목록</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </td>
+                            <th>촬영일</th>
+                            <td >
+                              <div class="form__row flex items-center">
+                                <div class="input required w-100 mr-2">
+                                  <input type="text" class="datepicker" required readonly >
+                                </div>
+                                <div class="input required w-100 mr-2">
+                                  <input type="time" required >
+                                </div>
+                                <div class="input required w-100">
+                                  <input type="text" required >
+                                </div>
+                                <div class="unit">분 동안</div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th>작업담당</th>
+                            <td >
+                              <div class="form__row flex items-center">
+                                <div class="select w-200">
+                                  <select name="" id="">
+                                    <option value="">-</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </td>
+                            <th>작업메모</th>
+                            <td >
+                              <div class="form__row flex items-center">
+                                <div class="input w-150 mr-2">
+                                  <input type="text" class="colorpicker" data-control="hue" value="#000">
+                                </div>
+                                <div class="input">
+                                  <input type="text" class="" placeholder="스케쥴 메모" >
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="row mt-1">
+                <div class="col">
+                  <div class="form">
+                    <div class="form__table">
+                      <table>
+                        <colgroup>
+                          <col width="150">
+                          <col>
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th>메모</th>
+                            <td>
+                              <div class="form__row">
+                                <div class="textarea">
+                                  <textarea name="" id=""></textarea>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col">
+            <div class="btnbox">
+              <button class="submit">신규 고객 등록</button>
+            </div>
+          </div>
+        </div>
+    </div>
   </div>
+</div>
 {% endblock %}

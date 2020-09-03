@@ -1,0 +1,128 @@
+.quickmenu {
+  width: 100%;
+
+  .quickmenu__header {
+    @apply flex bg-gray-700 items-center justify-between;
+    color: #fff;
+    padding: 0 10px;
+    height: 30px;
+    font-size: 12px;
+
+    h2 {
+      font-weight: 600;
+    }
+  }
+}
+
+.quickmenu__setting {
+  width: 15px;
+  height: 15px;
+  text-indent: -9999px;
+  overflow: hidden;
+  background: url('../images/icons/settings-white.png') no-repeat center;
+  background-size: 100% 100%;
+}
+
+.quickmenu__fav-user {
+  padding: 5px 4px;
+  @apply flex flex-wrap bg-gray-600;
+
+  a {
+    padding: 1px;
+    width: 20%;
+    span {
+      @apply bg-gray-900 text-white block text-center;
+      font-size: 12px;
+      width: 100%;
+      padding: 2px 0;
+      border-radius: 3px;
+    }
+  }
+}
+
+.quickmenu__actions {
+  padding: 5px;
+  @apply flex flex-wrap bg-gray-300 flex;
+
+  .btn {
+    font-size: 10px;
+    white-space: nowrap;
+    flex: 1;
+    margin-right: 1px;
+    border-radius: 3px;
+    &:last-child {
+      margin-right: 0;
+    }
+    @apply bg-gray-500 text-white border-gray-800;
+  }
+}
+
+.quickmenu__search {
+  padding: 5px;
+  @apply flex flex-wrap bg-gray-500;
+
+  .btn {
+    white-space: nowrap;
+    margin-left: 2px;
+    padding: 0 5px !important;
+    @apply bg-gray-600 text-white border-gray-600;
+  }
+}
+
+.quickmenu__member-more {
+  text-align: center;
+  font-size: 12px;
+  padding: 15px 0;
+
+  .btn {
+    display: inline-block;
+    width: 100px;
+    font-size: 12px;
+    line-height: 30px;
+    @apply bg-gray-200 border border-gray-500 mt-4;
+    text-align: center;
+  }
+}
+.quickmenu__member {
+  max-height: 600px;
+  overflow: auto;
+  .quickmenu__member-item {
+    padding: 5px;
+    font-size: 12px;
+    display: block;
+    @apply border-b border-gray-500 bg-white;
+
+    &:nth-child(even) {
+      @apply bg-gray-100;
+    }
+    &:hover {
+      @apply bg-gray-200;
+    }
+    .number {
+      width: 20px;
+      flex: none;
+      font-size: 12px;
+      padding-top: 2px;
+
+      .idx {
+        text-align: center;
+        display: block;
+        margin-right: 5px;
+      }
+    }
+    li {
+      font-size: 12px;
+      @apply flex mb-1;
+      line-height: 1em;
+
+      strong {
+        margin-right: 5px;
+        white-space: nowrap;
+        flex: none;
+        font-size: 10px;
+        @apply text-gray-600;
+        font-weight: 300;
+      }
+    }
+  }
+}
